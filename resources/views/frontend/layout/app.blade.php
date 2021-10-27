@@ -3,11 +3,12 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url('/css/css-custom.css') }}"/>
+        <link rel="stylesheet" href="{{ url('/css/image-show.css') }}"/>
         @toastr_css
     </head>
     <body>
         {{-- header  --}}
-        @include('layout.header')
+        @include('frontend.layout.header')
 
         {{-- container  --}}
         <div class="main">
@@ -16,7 +17,7 @@
             </div>
         </div>
 
-        @include('layout.footer')
+        @include('frontend.layout.footer')
     </body>
     <script src="{{ url('/js/js-custom.js') }}"></script>
     <script src="{{ url('/js/popup-modal.js') }}"></script>

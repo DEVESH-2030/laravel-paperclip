@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\PaperClip;
+use App\Models\UploadImage;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -59,5 +60,11 @@ class User extends Authenticatable implements \Czim\Paperclip\Contracts\Attachab
         ]);
 
         parent::__construct($attributes);
+    }
+
+    /* Relation with Upload image */
+    public function image()
+    {
+            return $this->hasOne(UploadImage::class);
     }
 }

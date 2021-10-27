@@ -9,7 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class PaperclipController extends Controller
+class UserController extends Controller
 {
     /**
      * constructor 
@@ -22,10 +22,11 @@ class PaperclipController extends Controller
     /**
      * User view index "register" 
      */
-    public function index()
+    public function getAllImage()
     {
         $user = User::all();
         return view($this->view . 'paperclip')->with(['user'=>$user]);
+        // return view('welcome')->with(['user'=>$user]);
     }
 
     /**
