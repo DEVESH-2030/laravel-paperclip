@@ -85,18 +85,20 @@
                     </span>
                 </button>
                 <ul class="users-item-dropdown nav-user-dropdown dropdown">
-                    <li><a href="##">
+                    <li><a href="#">
                         <i data-feather="user" aria-hidden="true"></i>
                         <span>Profile</span>
                     </a></li>
-                    <li><a href="##">
+                    <li><a href="#">
                         <i data-feather="settings" aria-hidden="true"></i>
                         <span>Account settings</span>
                     </a></li>
-                    <li><a class="danger" href="##">
-                        <i data-feather="log-out" aria-hidden="true"></i>
-                        <span>Log out</span>
-                    </a></li>
+                    <li>
+                        <a class="danger" href="{{ route('logout') }}">
+                            <i data-feather="log-out" aria-hidden="true"></i>
+                            <span>Log out</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

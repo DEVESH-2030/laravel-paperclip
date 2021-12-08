@@ -1,6 +1,6 @@
 <html>
    <head>
-     <title>Deftsoft | Frontend</title>
+     <title>DevLearn | Frontend</title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- Bootstrap -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -12,7 +12,7 @@
      <style>
          /*@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700";*/
         body{
-            background-color: rgb(47,50,56);
+            background-color: rgb(255, 255, 255);
         }
 
         .mt100 {
@@ -102,23 +102,25 @@
         </style>
     </head>
 <body>
+
     <div class="container mt100">
+        <h3>Show All Images</h3>
         <section class="row">
             @forelse ($getAllImages as $getImage)
                 <div class="col-lg-3 col-sm-4 col-xs-6 image-holder">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
-                                <img src="{{ asset($getImage->image_file_name ?? '') }}" alt="...">
+                                <img src="{{ url('/storage/' . $getImage->image)  }}" alt="...">
                                 <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
                             </a>
                         </div>
                     </div>
                 </div>
             @empty
-                No image available
+                <span> No images available </span>
             @endforelse
-            <div class="col-lg-3 col-sm-4 col-xs-6 image-holder">
+            {{-- <div class="col-lg-3 col-sm-4 col-xs-6 image-holder">
                 <div class="panel panel-default">
                     <div class="panel-body">
                     <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
@@ -127,77 +129,8 @@
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-4 col-xs-6 image-holder">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
-                            <img src="https://raw.githubusercontent.com/yuliya5/image-modal-responsive/master/images/mountains3.jpg" alt="...">
-                            <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-4 col-xs-6 image-holder">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
-                            <img src="https://raw.githubusercontent.com/yuliya5/image-modal-responsive/master/images/mountains4.jpg" alt="...">
-                            <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-4 col-xs-6 image-holder">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
-                            <img src="https://raw.githubusercontent.com/yuliya5/image-modal-responsive/master/images/mountains7.jpg" alt="...">
-                            <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-4 col-xs-6 image-holder">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
-                            <img src="https://raw.githubusercontent.com/yuliya5/image-modal-responsive/master/images/mountains8.jpg" alt="...">
-                            <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-4 col-xs-6 image-holder">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
-                            <img src="https://raw.githubusercontent.com/yuliya5/image-modal-responsive/master/images/mountains9.jpg" alt="...">
-                            <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-4 col-xs-6 image-holder">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
-                            <img src="https://raw.githubusercontent.com/yuliya5/image-modal-responsive/master/images/mountains10.jpg"/>
-                            <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-4 col-xs-6 image-holder">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
-                            <img src="https://raw.githubusercontent.com/yuliya5/image-modal-responsive/master/images/mountains5.jpg"/>
-                            <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            </div> --}}
+            
             <!-- Modal -->
       <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog">

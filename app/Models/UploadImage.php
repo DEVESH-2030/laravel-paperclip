@@ -22,23 +22,23 @@ class UploadImage extends Model implements \Czim\Paperclip\Contracts\AttachableI
     /**
      * paperclip image upload 
      */
-    public function __construct(array $attributes = [])
-    {
-        $this->hasAttachedFile('image', [
-            'variants' => [
-                'medium' => [
-                    'auto-orient' => [],
-                    'resize'      => ['dimensions' => '300x300'],
-                ],
-                'thumb' => '100x100',
-            ],
-            'attributes' => [
-                'variants' => true,
-            ],
-        ]);
+    // public function __construct(array $attributes = [])
+    // {
+    //     $this->hasAttachedFile('image', [
+    //         'variants' => [
+    //             'medium' => [
+    //                 'auto-orient' => [],
+    //                 'resize'      => ['dimensions' => '300x300'],
+    //             ],
+    //             'thumb' => '100x100',
+    //         ],
+    //         'attributes' => [
+    //             'variants' => true,
+    //         ],
+    //     ]);
 
-        parent::__construct($attributes);
-    }
+    //     parent::__construct($attributes);
+    // }
 
     /* Relation with user */
     public function user()

@@ -24,8 +24,14 @@
                             <p class="white-block__title">Image</p>
                             <div class="dropzone-wrapper" id="dropzone">
                                 <div class="dropzone-start">
+                                    <div class="categories-table-img">
+                                        <picture style="float: left; margin-left: -116px;
+                                        margin-top: 23px;">
+                                        <source srcset="{{ url('/storage/' . $edit->image) }}" type="image/webp"><img src="{{ url('/storage/' . $edit->image) }}" alt="User Name">
+                                        </picture>
+                                      </div>
                                     <span class="icon thumbnail" aria-hidden="true"></span>
-                                    <input type="file" name="image" id="image" accept="image/png, image/jpeg" value="{{ $edit->image_file_name }}">
+                                    <input class="upload" type="file" name="image" id="image" accept="image/png, image/jpeg" value="{{ url('/storage/' . $edit->image) }}">
                                     {{-- <p class="dropzone-hint" >Drop files to upload or</p> --}}
                                 </div>
                             </div>

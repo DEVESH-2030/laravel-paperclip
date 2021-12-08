@@ -98,6 +98,7 @@
                   	<div class="chart">
                     	<canvas id="myChart" aria-label="Site statistics" role="img"></canvas>
                   	</div>
+					  <h4 class="main-title">Users List	</h4>
 					<div class="users-table table-wrapper">
 						<table class="posts-table">
 							<thead>
@@ -120,14 +121,16 @@
 									<td>
 										<label class="users-table__checkbox">
 										<input type="checkbox" class="check">
-										<div class="pages-table-img>
-											<picture><source srcset="{{ asset('img/avatar/avatar-face-04.webp')}}" type="image/webp"><img src="{{ asset('img/avatar/avatar-face-04.png')}}" alt="User Name"></picture>
+										<div class="pages-table-img">
+											<picture>
+												<source srcset="{{ asset('img/avatar/avatar-illustrated-03.webp')}}" type="image/webp"><img src="{{ asset('img/avatar/avatar-illustrated-03.webp')}}" alt="User Name">
+											</picture>
 										</div>
 										</label>
 									</td>
 									<td> {{ $user->name}} </td>
 									<td> {{ $user->email}}</td>
-									<td><span class="badge-pending">Pending</span></td>
+									<td><span class="badge-active">Active</span></td>
 									<td>{{ $user->created_at }}</td>
 									<td>
 										<span class="p-relative">

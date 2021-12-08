@@ -21,7 +21,7 @@ class AdminSeeder extends Seeder
             [
                 'name'       => 'Admin',
                 'email'      => 'admin@admin.com',
-                'password'   => Hash::make('1234'),
+                'password'   => Hash::make('admin@123'),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

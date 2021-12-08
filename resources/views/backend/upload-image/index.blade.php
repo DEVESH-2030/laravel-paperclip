@@ -35,7 +35,7 @@
                       <label class="users-table__checkbox">
                       <input type="checkbox" class="check">
                       <div class="categories-table-img">
-                        <picture><source srcset="{{ asset('img/avatar/avatar-face-04.webp')}}" type="image/webp"><img src="{{ $getImage->image_file_name }}" alt="User Name"></picture>
+                        <picture><source srcset="{{ url('/storage/' . $getImage->image) }}" type="image/webp"><img src="{{ url('/storage/' . $getImage->image) }}" alt="User Name"></picture>
                       </div>
                       </label>
                     </td>

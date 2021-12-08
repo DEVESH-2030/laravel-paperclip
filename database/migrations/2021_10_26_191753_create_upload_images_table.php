@@ -16,6 +16,7 @@ class CreateUploadImagesTable extends Migration
         Schema::create('upload_images', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->nullable();
+            $table->longText('image')->nullable();
             $table->string('image_file_name')->nullable();
             $table->integer('image_file_size')->nullable();
             $table->string('image_content_type')->nullable();

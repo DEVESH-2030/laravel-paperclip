@@ -24,7 +24,7 @@ class HomeController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function getAllImage()
     {
         $getAllImages = $this->uploadImage->all();
         return view($this->view . 'index' , compact('getAllImages'));

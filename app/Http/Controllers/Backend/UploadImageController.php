@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ImageRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class UploadImageController extends Controller
 {
@@ -58,10 +59,15 @@ class UploadImageController extends Controller
         {
             toastr()->warning('please select your image');
         }
-        elseif ($upload)  
-        {
-            $upload->user_id = 1;
-            $upload->image = request()->image ?? '';
+        elseif (request()->hasfile('image'))  
+        {   
+            $file = $request->file('image');
+            $profile_image = $file->getClientOriginalName();
+            $dir = 'avatars' . $upload->id;
+            $filePath = $dir . '/' . $profile_image;
+            $storage = Storage::disk('public')->put($filePath, file_get_contents($file), 'public');
+            $upload->image = $filePath;
+            $upload->user_id = auth()->user()->id;
             $upload->save();
             toastr()->success('Image uploaded successfull');
         } else {
@@ -104,7 +110,12 @@ class UploadImageController extends Controller
         $updateImage = $this->uploadImage->find($id);
         # update image
         if($updateImage) {
-            $updateImage->image = request()->image ?? '';
+            $file = $request->file('image');
+            $profile_image = $file->getClientOriginalName();
+            $dir = 'avatars' . $updateImage->id;
+            $filePath = $dir . '/' . $profile_image;
+            $storage = Storage::disk('public')->put($filePath, file_get_contents($file), 'public');
+            $updateImage->image = $filePath;
             $updateImage->update();
 
             toastr()->success('Image updated successfull');
