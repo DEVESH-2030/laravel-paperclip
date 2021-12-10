@@ -22,8 +22,8 @@
                             <div class="dropzone-wrapper" id="dropzone">
                                 <div class="dropzone-start">
                                     <span class="icon thumbnail" aria-hidden="true"></span>
-                                    <input type="file" name="image" id="image" accept="image/png, image/jpeg">
-                                    {{-- <p class="dropzone-hint" >Drop files to upload or</p> --}}
+                                    <input type="file" name="image" id="image" accept="image/png, image/jpeg" placeholder=""> 
+                                    <p class="dropzone-hint" >{{ trans('validation.upload') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -31,5 +31,16 @@
                 </div>
             </form>
         </div>
+
+        {{-- <div class="container">
+            <div class="col-md-4">
+                <form action="/upload-target" class="dropzone" id="drop">
+                    <div class="dz-message needsclick">
+                        <i class="icon-image far fa-images" aria-hidden="true"></i>
+                    </div>
+                </form>
+            </div>
+        </div> --}}
+        
     </main>
 @endsection

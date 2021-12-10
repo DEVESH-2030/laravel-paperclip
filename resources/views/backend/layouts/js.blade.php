@@ -8,3 +8,5 @@
     <script src="{{ url('plugins/quill.js')}}"></script>
     <!-- Custom scripts -->
     <script src="{{ url('js/script.js')}}"></script>
+    
+    <script src="{{ url('js/dropzone-js.js')}}"></script>

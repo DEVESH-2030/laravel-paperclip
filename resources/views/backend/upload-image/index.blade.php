@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-  
+
 @section('content')
   <div class="layer"></div>
 <!-- ! Body -->
@@ -35,7 +35,7 @@
                       <label class="users-table__checkbox">
                       <input type="checkbox" class="check">
                       <div class="categories-table-img">
-                        <picture><source srcset="{{ url('/storage/' . $getImage->image) }}" type="image/webp"><img src="{{ url('/storage/' . $getImage->image) }}" alt="User Name"></picture>
+                        <picture><source srcset="{{ url('uploads/' . $getImage->image) }}" type="image/webp"><img src="{{ url('uploads/' . $getImage->image) }}" alt="file name"></picture>
                       </div>
                       </label>
                     </td>
@@ -62,10 +62,8 @@
                   @endforelse
                 </tbody>
               </table>
-              {{-- <!-- previous and next data -->
-              <div class="d-flex justify-content-center text-right">
-                {{ $getAllImages->links() }}
-            </div> --}}
+              <!-- previous and next data -->
+                {{-- {{ $getAllImages->links() }} --}}
             </div>
           </div>
         </div>
@@ -74,15 +72,10 @@
           <a class="pagination-prev disabled" href="##" title="Go to previous page"><i
               data-feather="arrow-left"></i></a>
           <ul class="pagination">
-            <li><a class="active" href="##">1</a></li>
-            <li><a href="##">2</a></li>
-            <li><a href="##">3</a></li>
-            <li><a href="##">4</a></li>
-            <li><a href="##">5</a></li>
-            <li><a href="##">...</a></li>
-            <li><a href="##">10</a></li>
+            <li><a class="active" href="#">1</a></li>
+            <li><a href="#">2</a></li>
           </ul>
-          <a class="pagination-next" href="##" title="Go to next page"><i data-feather="arrow-right"></i></a>
+          <a class="pagination-next" href="#" title="Go to next page"><i data-feather="arrow-right"></i></a>
         </div>
       </div>
     </main>

@@ -1926,7 +1926,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.clipboard = this.theme.addModule('clipboard');
 	    this.history = this.theme.addModule('history');
 	    this.theme.init();
-	    this.pasteHTML('<div class=\'ql-editor\' style="white-space: normal;">' + html + '<p><br></p></div>');
+	    this.pasteHTML('<div class=\'ql-editor\' style="white-space: normal;">' + html + '<p></p></div>');
 	    this.history.clear();
 	    if (options.readOnly) {
 	      this.disable();

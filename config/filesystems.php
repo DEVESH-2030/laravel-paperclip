@@ -81,4 +81,8 @@ return [
         public_path('storage') => storage_path('app/public'),
     ],
 
+    'uploads' => [
+        'directory' => 'attachements',
+    ],
+
 ];

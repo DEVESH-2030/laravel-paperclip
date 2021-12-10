@@ -15,6 +15,9 @@
         <link href="{{ asset('plugins/quill.snow.css') }}" rel="stylesheet">
         <!-- Custom styles -->
         <link rel="stylesheet" href="{{ asset('css/style.min.css')}}">
+        {{--start js file --}}
+        @include('backend.layouts.css')
+        {{-- end js file --}}
         @toastr_css
     </head>
 

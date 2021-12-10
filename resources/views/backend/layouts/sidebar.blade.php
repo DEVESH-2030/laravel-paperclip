@@ -71,7 +71,7 @@
                     <picture><source srcset="{{ asset('img/avatar/avatar-illustrated-01.webp')}}" type="image/webp"><img src="{{ asset('img/avatar/avatar-illustrated-01.png')}}" alt="User name"></picture>
                 </span>
                 <div class="sidebar-user-info">
-                    <span class="sidebar-user__title">Nafisa Sh.</span>
+                    <span class="sidebar-user__title">Dee Sh.</span>
                     <span class="sidebar-user__subtitle">Support manager</span>
                 </div>
             </a>

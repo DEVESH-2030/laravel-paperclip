@@ -148,4 +148,5 @@ return [
 
     'attributes' => [],
 
+    'upload' => 'Drop file to upload here'
 ];

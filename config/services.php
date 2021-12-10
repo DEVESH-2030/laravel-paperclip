@@ -30,6 +30,6 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'pagination' => 10,
+    'pagination' => 20,
 
 ];

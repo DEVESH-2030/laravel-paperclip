@@ -6,6 +6,7 @@ use App\Models\UploadImage;
 use Illuminate\Http\Request;
 use App\Http\Requests\ImageRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Storage;
 
@@ -31,8 +32,8 @@ class UploadImageController extends Controller
     public function index()
     {
         $getAllImages = $this->uploadImage
-        ->orderBy('id', 'desc')
-        ->paginate(config('services.pagination'));
+                                        ->orderBy('id', 'desc')
+                                        ->paginate(config('services.pagination'));
         return view($this->view . 'index' , compact('getAllImages'));
     }
 
@@ -54,26 +55,42 @@ class UploadImageController extends Controller
      */
     public function store(Request $request)
     {
-        $upload = $this->uploadImage;
-        if (empty(request()->image))
-        {
-            toastr()->warning('please select your image');
+        try {
+
+            $file = $request->image;
+            $upload = $this->uploadImage;
+            if (empty(request()->image))
+            {
+                toastr()->warning('Please select image.');
+            }
+            elseif (request()->hasfile('image'))  
+            {   
+                try {
+                    $fileName      = $file->getClientOriginalName();
+                    $fileSize      = $file->getSize() / 1024;
+                    $mimeType      = $file->getMimeType();
+                    $fileExtension = $file->getClientOriginalExtension();
+                } catch (\Throwable $th) {
+                    return $th;
+                }
+    
+                $minifiedName = md5(uniqid().File::extension($fileName)) . '.' . $fileExtension;
+                $filePath     = uniqid() . '/' . config('filesystems.uploads.directory') . '/' . $minifiedName;
+                $path     = uniqid() . '/' . config('filesystems.uploads.directory');
+                $file->move(public_path('uploads/' . $path), $minifiedName);
+                // Storage::disk('public')->put($filePath, file_get_contents($file), 'public');
+                $upload->image = $path . '/' . $minifiedName;
+                $upload->user_id = auth()->user()->id;
+                $upload->save();
+                toastr()->success('Image uploaded successfull.');
+    
+            } else {
+                toastr()->error('An error has occurred please try again later.');
+            }
+            return back();
+        } catch (\Throwable $th) {
+            return $th->getMessage();
         }
-        elseif (request()->hasfile('image'))  
-        {   
-            $file = $request->file('image');
-            $profile_image = $file->getClientOriginalName();
-            $dir = 'avatars' . $upload->id;
-            $filePath = $dir . '/' . $profile_image;
-            $storage = Storage::disk('public')->put($filePath, file_get_contents($file), 'public');
-            $upload->image = $filePath;
-            $upload->user_id = auth()->user()->id;
-            $upload->save();
-            toastr()->success('Image uploaded successfull');
-        } else {
-            toastr()->error('An error has occurred please try again later.');
-        }
-        return back();
     }
 
     /**
@@ -112,7 +129,7 @@ class UploadImageController extends Controller
         if($updateImage) {
             $file = $request->file('image');
             $profile_image = $file->getClientOriginalName();
-            $dir = 'avatars' . $updateImage->id;
+            $dir = uniqid() . $updateImage->id;
             $filePath = $dir . '/' . $profile_image;
             $storage = Storage::disk('public')->put($filePath, file_get_contents($file), 'public');
             $updateImage->image = $filePath;
