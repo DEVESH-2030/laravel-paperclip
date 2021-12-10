@@ -58,7 +58,7 @@
     @include('backend.layouts.js')
     {{-- end js file --}}
 
-    @jquery <br />
-    @toastr_js <br />
-    @toastr_render <br/>
+    @jquery 
+    @toastr_js 
+    @toastr_render
 </html>

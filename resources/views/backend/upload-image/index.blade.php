@@ -29,37 +29,39 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @forelse ($getAllImages as $getImage)
-                    <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                      <input type="checkbox" class="check">
-                      <div class="categories-table-img">
-                        <picture><source srcset="{{ url('uploads/' . $getImage->image) }}" type="image/webp"><img src="{{ url('uploads/' . $getImage->image) }}" alt="file name"></picture>
-                      </div>
-                      </label>
-                    </td>
-                    <td>{{ $getImage->created_at ?? ''}}</td>
-                    <td>
-                      <span class="p-relative">
-                      <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                        <div class="sr-only">More info</div>
-                        <i data-feather="more-horizontal" aria-hidden="true"></i>
-                      </button>
-                     <!-- edit -->
-                     <!-- delete -->
-                      <ul class="users-item-dropdown dropdown">
-                        <li><a href="{{ route('edit',$getImage->id) }}">Edit</a></li>
-                        <li><a href="#">Quick edit</a></li>
-                        <li><a href="{{ route('delete', $getImage->id) }}"">Trash</a></li>
-                      </ul>
-                      </span>
-                    </td>
-                    </tr>
-                    
-                  @empty
-                  No data availabel
-                  @endforelse
+                  @if (auth()->user())
+                    @forelse ($getAllImages as $getImage)
+                      <tr>
+                      <td>
+                        <label class="users-table__checkbox">
+                        <input type="checkbox" class="check">
+                        <div class="categories-table-img">
+                          <picture><source srcset="{{ url('uploads/' . $getImage->image) }}" type="image/webp"><img src="{{ url('uploads/' . $getImage->image) }}" alt="file name"></picture>
+                        </div>
+                        </label>
+                      </td>
+                      <td>{{ $getImage->created_at ?? ''}}</td>
+                      <td>
+                        <span class="p-relative">
+                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                          <div class="sr-only">More info</div>
+                          <i data-feather="more-horizontal" aria-hidden="true"></i>
+                        </button>
+                      <!-- edit -->
+                      <!-- delete -->
+                        <ul class="users-item-dropdown dropdown">
+                          <li><a href="{{ route('edit',$getImage->id) }}">Edit</a></li>
+                          <li><a href="#">Quick edit</a></li>
+                          <li><a href="{{ route('delete', $getImage->id) }}"">Trash</a></li>
+                        </ul>
+                        </span>
+                      </td>
+                      </tr>
+                      
+                    @empty
+                    No data availabel
+                    @endforelse
+                  @endif
                 </tbody>
               </table>
               <!-- previous and next data -->

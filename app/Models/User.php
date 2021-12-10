@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Role;
 use App\Models\PaperClip;
 use App\Models\UploadImage;
 use Illuminate\Notifications\Notifiable;
@@ -66,5 +67,13 @@ class User extends Authenticatable implements \Czim\Paperclip\Contracts\Attachab
     public function image()
     {
             return $this->hasOne(UploadImage::class);
+    }
+
+    /**
+     * Relation with role model
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 }
