@@ -20,7 +20,7 @@ use App\Http\Controllers\RoleController;
 |
 */
 /* frontend Route */
-Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'getAllImage'])->name('/');
+Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('html-template');
 Route::post('register', [UserController::class, 'register'])->name('register');
 
 

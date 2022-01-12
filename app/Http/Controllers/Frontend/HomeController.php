@@ -24,10 +24,10 @@ class HomeController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public function getAllImage()
+    public function index()
     {
         $getAllImages = $this->uploadImage->all();
-        return view($this->view . 'index' , compact('getAllImages'));
+        return view($this->view . 'html-template.index' , compact('getAllImages'));
     }
     
     /**

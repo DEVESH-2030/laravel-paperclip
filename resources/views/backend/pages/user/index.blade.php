@@ -35,6 +35,9 @@
                                             <input type="checkbox" class="check">
                                             <div class="pages-table-img">
                                                 <picture>
+                                                    @if (auth()->user()->name == $user->name )
+                                                    <i style="color:rgb(24, 170, 24);" class="fas fa-circle active-user-dot"></i>
+                                                    @endif
                                                     <source srcset="{{ asset('img/avatar/avatar-illustrated-03.webp')}}" type="image/webp"><img src="{{ asset('img/avatar/avatar-illustrated-03.webp')}}" alt="User Name">
                                                 </picture>
                                             </div>
@@ -65,7 +68,6 @@
                                             </span>
                                         </td>
                                         </tr>
-                                        
                                     @empty
                                     No data availabel
                                     @endforelse
@@ -75,8 +77,8 @@
                     </div>
                     <div class="col-lg-3">
                     <article class="customers-wrapper">
-                          <p class="customers__title"> &nbsp; Total Users <span> {{ $users->count()}} </span></p>
-                        <p class="customers__date"> &nbsp; 28 Daily Avg.</p>
+                        <p class="customers__title"> &nbsp; Total Users {{ $users->count()}} available & user {{auth()->user()->id}} active
+                        <p class="customers__date"> &nbsp; Today: {{  date('d/m/Y', strtotime(\Carbon\Carbon::now() ))}}</p>
                         <picture><source srcset="{{ asset('/img/svg/customers.svg') }}" type="image/webp"><img src="{{ asset('/img/svg/customers.svg') }}" alt=""></picture> 
                     </article>
                     <article class="white-block">

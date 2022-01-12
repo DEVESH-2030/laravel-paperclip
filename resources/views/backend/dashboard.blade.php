@@ -2,7 +2,7 @@
 
 @section('content')
 	@php 
-		toastr()->success(auth()->user()->name . ' ' . 'Logged in successfully.')
+		// toastr()->success(auth()->user()->name . ' ' . 'Logged in successfully.')
 	@endphp
 
         <script>
