@@ -72,7 +72,6 @@ class RegisterController extends Controller
             'email'    => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-        toastr()->success('Registration has been successfull!');
     }
 
     /**
@@ -83,9 +82,17 @@ class RegisterController extends Controller
  */
 public function register(Request $request)
 {
-    $this->validator($request->all())->validate();
+    $request = $this->validator($request->all())->validate();
 
-    event(new Registered($user = $this->create($request->all())));
+    if(isset($request) && ! empty($request)) {
+
+        event(new Registered($user = $this->create($request)));
+        
+        toastr()->success('Registration has been successful, Now you login here.');
+    
+    } else {
+        toastr()->error('Something went wrong.');
+    }
 
     return redirect($this->redirectPath())->with('message', 'Your message');
 }

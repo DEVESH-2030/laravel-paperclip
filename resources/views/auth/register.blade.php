@@ -68,6 +68,11 @@
                                 </button>
                             </div>
                         </div>
+
+                        <div class="">
+                            <p class="small mt-2 pt-1 mb-0"><b>have an account? </b><a href="{{ route('login') }}"
+                                class="link-danger" id="login">Login</a></p>
+                        </div>
                     </form>
                 </div>
             </div>

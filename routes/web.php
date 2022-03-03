@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Backend\UploadImageController;
+use App\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +20,13 @@ use App\Http\Controllers\Backend\UploadImageController;
 |
 */
 /* frontend Route */
-Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'getAllImage'])->name('/');
+Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('html-template');
 Route::post('register', [UserController::class, 'register'])->name('register');
+
+
 /* Prefix admin url to login  */
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('role', [RoleController::class, 'index'])->name('role');
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
     Auth::routes();
     Route::post('/login', [LoginController::class, 'login'])->name('login.post');
@@ -36,6 +40,7 @@ Route::get('admin', function(){
 /* Dashboard open after login user / admin */
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('users', [AdminController::class, 'getAllUsers'])->name('users');
     /* upload image routes */
     Route::get('uploaded-image-lists', [UploadImageController::class, 'index'])->name('uploaded-image-lists');
     Route::get('upload-new', [UploadImageController::class, 'create'])->name('upload-new');
