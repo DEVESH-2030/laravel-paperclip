@@ -21,20 +21,20 @@
             <div class="sidebar-body">
                 <ul class="sidebar-body-menu">
                     <li>
-                        <a class="active" href="{{ route('dashboard')}}"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+                        <a class="active" href="{{ route('dashboard')}}"><span class="icon home" aria-hidden="true"></span> <i class="fas fa-tachometer-alt"></i> &nbsp; Dashboard</a>
                     </li>
 
                     <li>
                         <a class="show-cat-btn" href="##">
-                            <span class="icon document" aria-hidden="true"></span>Upload Image
+                            <span class="icon document" aria-hidden="true"></span> <i class="fas fa-upload"></i> &nbsp; Upload
                             <span class="category__btn transparent-btn" title="Open list">
                                 <span class="sr-only">Open album</span>
                                 <span class="icon arrow-down" aria-hidden="true"></span>
                             </span>
                         </a>
                         <ul class="cat-sub-menu">
-                            <li> <a href="{{ route('uploaded-image-lists')}}">All Uploaded</a> </li>
-                            <li> <a href="{{ route('upload-new') }}">Upload new Image</a> </li>
+                            <li> <a href="{{ route('upload-new') }}"> <i class="fas fa-image"></i> &nbsp; Upload new Image</a> </li>
+                            <li> <a href="{{ route('uploaded-image-lists')}}"> <i class="fas fa-images"></i> &nbsp; All Uploaded</a> </li>
                         </ul>
                     </li>
                 </ul>
@@ -42,7 +42,7 @@
                 <ul class="sidebar-body-menu">
                     <li>
                         <a class="show-cat-btn" href="##">
-                            <span class="icon user-3" aria-hidden="true"></span>Users
+                            <span class="icon user-3" aria-hidden="true"></span> <i class="fas fa-users-cog"></i> &nbsp; Manage User
                             <span class="category__btn transparent-btn" title="Open list">
                                 <span class="sr-only">Open list</span>
                                 <span class="icon arrow-down" aria-hidden="true"></span>
@@ -50,15 +50,12 @@
                         </a>
                         <ul class="cat-sub-menu">
                             <li>
-                                <a href="users-01.html">Users-01</a>
-                            </li>
-                            <li>
-                                <a href="users-02.html">Users-02</a>
+                                <a href="{{ route('users') }}"> <i class="fas fa-users"></i> &nbsp; Users</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href=""><span class="icon setting" aria-hidden="true"></span>Settings</a>
+                        <a href=""><span class="icon setting" aria-hidden="true"></span> <i class="fas fa-cogs"></i> &nbsp; Settings</a>
                     </li>
                 </ul>
             </div>

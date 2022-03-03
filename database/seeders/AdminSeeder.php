@@ -19,8 +19,17 @@ class AdminSeeder extends Seeder
         //Add the master administrator, user id of 1
         $users = [
             [
+                'name'       => 'Super Admin',
+                'email'      => 'superadmin@admin.com',
+                'role_id'    => '1',
+                'password'   => Hash::make('Sadmin@123'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
                 'name'       => 'Admin',
                 'email'      => 'admin@admin.com',
+                'role_id'    => '2',
                 'password'   => Hash::make('admin@123'),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),

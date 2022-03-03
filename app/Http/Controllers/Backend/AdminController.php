@@ -11,14 +11,25 @@ class AdminController extends Controller
     /**
      * constructor 
      */
-    function __construct()
+    function __construct(User $user)
     {
+        $this->user = $user;
         $this->view = '.backend.';
     }
+
+    /**
+     * Get all user
+     */
     public function dashboard()
     {
-        $users = User::all();
+        $users = $this->user::all();
         return view($this->view . 'dashboard', compact('users'));
+    }
+
+    public function getAllUsers()
+    {
+        $users = $this->user::all();
+        return view($this->view . 'pages.user.index', compact('users'));
     }
     
 }
