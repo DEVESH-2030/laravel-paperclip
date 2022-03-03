@@ -1,0 +1,51 @@
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+
+.aside_image{
+  position: absolute;
+  height: 90%;
+}
+
+.login_image{
+  position: relative;
+  margin: 165px 0px 0px -136px;
+  height: 90%;
+  widows: initial;
+  shape-outside: border-box;
+}
+#forgot{
+  color: rgb(31, 100, 202);
+}
+
+#forgot:hover{
+  color: rgba(0, 0, 255, 0.308);
+}
+
+#register{
+  color: rgb(219, 28, 28);
+  font-family: 'Gill Sans';
+}
+#register:hover{
+  color: blue;
+}
+
+#login{
+  color: rgb(6, 156, 86);
+  font-family: 'Gill Sans';
+}
+#login:hover{
+  color: rgb(230, 94, 90);
+}

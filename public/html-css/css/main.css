@@ -412,7 +412,7 @@ p {
   width: 95%;
   text-align: center;
   opacity: 0;  
-  transition: opacity calc(var(--photoboxAnimationDuration, .8s) / 4) cubic-bezier(0.71, 0.05, 0.29, 0.9), transform calc(var(--photoboxAnimationDuration, .8s) / 4) cubic-bezier(0.71, 0.05, 0.29, 0.9);
+  transition: opacity calc(var(--photoboxAnimationDuration, .10s) / 4) cubic-bezier(0.71, 0.05, 0.29, 0.9), transform calc(var(--photoboxAnimationDuration, .10s) / 4) cubic-bezier(0.71, 0.05, 0.29, 0.9);
   will-change: opacity, transform;
   position: absolute;
   top: 50%;
