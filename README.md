@@ -7,6 +7,20 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## About This Project 
+1. This project are develoved a purpose for learning. 
+2. And this project are running or in-progress. 
+## Run This Project helpful follow as:
+1. composer install/update
+2. create a database devlearn_database
+3. composer dump-autoload
+4. If need to change php version can change like ^7.3 to 8.0.x
+5. php artisan optimize:clear or
+6. php artisan cache:clear, route:clear, config:clear etc...
+7. php artisan migrate.
+8. php artisan db:seed.
+9. create a .env file to connect with your database.
+10. can follow as env-example file to .env file.
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
