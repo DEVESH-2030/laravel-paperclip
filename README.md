@@ -59,3 +59,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Run This Project helpful follow as:
+1. composer install/update
+2. create a database devlearn_database
+3. composer dump-autoload
+4. If need to change php version can change like ^7.3 to 8.0.x
+5. php artisan optimize:clear or
+6. php artisan cache:clear, route:clear, config:clear etc...
+7. php artisan migrate.
+8. php artisan db:seed.
+9. create a .env file to connect with your database.
+10. can follow as env-example file to .env file.
