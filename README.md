@@ -1,12 +1,20 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-Project websote Url : http://devlearn.test/
-Project Admin Url : http://devlearn.test/admin
-Website main landing page
+**Project websote Url**  : http://devlearn.test/
+
+**Project Admin Url** : http://devlearn.test/admin
+
+
+## Website main landing page
 ![image](https://user-images.githubusercontent.com/73014162/156980451-627a8fb8-b210-4b6d-b023-6482bcaa49ed.png)
 
 
+## Admin Login Page 
 ![image](https://user-images.githubusercontent.com/73014162/156980224-98aef5c7-9397-40e2-b678-57222b58828e.png)
+
+
+## Dashboard
+![image](https://user-images.githubusercontent.com/73014162/156981088-f2e2b528-c651-4560-83bb-4e2c8f1c46d0.png)
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
