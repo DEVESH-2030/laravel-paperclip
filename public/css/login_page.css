@@ -14,6 +14,31 @@
   }
 }
 
+#card-header {
+  color: rgb(8, 8, 8);
+  background-color:blueviolet;
+  border-top-right-radius: 20px;
+	/* border-bottom-left-radius: 10px; */
+  background: radial-gradient(circle, rgb(145, 180, 231), rgb(226, 221, 221));
+
+}
+
+#card-layout{
+  border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+  position: absolute;
+  z-index: 3; /* put .gold-box above .green-box and .dashed-box */
+  width: 90%;
+  left: 80px;
+  top: 3.5em;
+  box-shadow: 2px 1px 10px 4px rgba(66, 66, 66, 0.945), 0 15px 12px rgba(200, 200, 206, 0.22);
+
+  /* box-shadow: 0 19px 38px rgba(119, 132, 209, 0.3), 0 15px 12px rgba(98, 100, 221, 0.22); */
+  /* background-image: url('http://devlearn.test/html-css/images/login_3/login_2.jpg'); */
+  /* background: linear-gradient(black, white); */
+  /* background: radial-gradient(circle, black, white); */
+}
+
 .aside_image{
   position: absolute;
   height: 90%;
@@ -21,11 +46,13 @@
 
 .login_image{
   position: relative;
-  margin: 165px 0px 0px -136px;
-  height: 90%;
+  margin: 0px 0px 0px 0px;
+  height: auto;
+  width: 100%;
   widows: initial;
   shape-outside: border-box;
 }
+
 #forgot{
   color: rgb(31, 100, 202);
 }
@@ -48,4 +75,26 @@
 }
 #login:hover{
   color: rgb(230, 94, 90);
+}
+
+.login-section{
+  border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+
+  position: absolute;
+  z-index: 3; /* put .gold-box above .green-box and .dashed-box */
+  background: #ffffff;
+  width: 80%;
+  left: 60px;
+  top: 3.5em;
+  box-shadow: 0 5px 5px rgba(0,0,0,.4);
+  /* box-shadow: 0 19px 38px rgba(218, 213, 213, 0.3), 0 15px 12px rgba(190, 186, 186, 0.22); */
+  /* background-image: url('http://devlearn.test/html-css/images/login_3/login_2.jpg'); */
+  /* background: linear-gradient(black, white); */
+  /* background: radial-gradient(circle, rgb(145, 178, 228), white); */
+}
+
+#image-section{
+ background-color: #065fe6;
+ border-radius: 3em;
 }

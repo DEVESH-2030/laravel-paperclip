@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('main_layouts.app')
 
 @section('content')
 <div class="container">
@@ -71,7 +71,7 @@
 
                         <div class="">
                             <p class="small mt-2 pt-1 mb-0"><b>have an account? </b><a href="{{ route('login') }}"
-                                class="link-danger" id="login">Login</a></p>
+                                class="link-danger" id="login">Sig In</a></p>
                         </div>
                     </form>
                 </div>
